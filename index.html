@@ -30,6 +30,7 @@
     }
 
     /* NAVBAR */
+
     nav{
       width:100%;
       padding:18px 8%;
@@ -86,7 +87,8 @@
       color:#38bdf8;
     }
 
-    /* HERO */
+    /* HERO SECTION */
+
     header{
       min-height:100vh;
       background:
@@ -102,13 +104,49 @@
       overflow:hidden;
     }
 
+    header::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(255,255,255,0.06);
+      border-radius:50%;
+      top:-150px;
+      right:-120px;
+      filter:blur(30px);
+    }
+
+    header::after{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(56,189,248,0.12);
+      border-radius:50%;
+      bottom:-120px;
+      left:-100px;
+      filter:blur(30px);
+    }
+
     .hero{
       max-width:900px;
       z-index:2;
+      animation:fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     .hero h1{
-      font-size:4.5rem;
+      font-size:4.8rem;
       line-height:1.2;
       margin-bottom:20px;
       font-weight:800;
@@ -138,11 +176,18 @@
       border-radius:50px;
       text-decoration:none;
       font-weight:600;
+      transition:0.4s;
+      display:inline-block;
     }
 
     .btn-primary{
-      background:#38bdf8;
-      color:black;
+      background:linear-gradient(90deg,#38bdf8,#7c3aed);
+      color:white;
+      box-shadow:0 10px 25px rgba(59,130,246,0.4);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-5px);
     }
 
     .btn-secondary{
@@ -150,7 +195,42 @@
       color:white;
     }
 
-    /* SECTIONS */
+    .btn-secondary:hover{
+      background:white;
+      color:#0f172a;
+    }
+
+    /* HERO STATS */
+
+    .hero-stats{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .stat-box{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:25px;
+      border-radius:20px;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+    }
+
+    .stat-box:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,0.15);
+    }
+
+    .stat-box h2{
+      font-size:2rem;
+      margin-bottom:8px;
+      color:#38bdf8;
+    }
+
+    /* SECTION */
+
     section{
       padding:90px 8%;
     }
@@ -163,9 +243,18 @@
     .section-title h2{
       font-size:2.8rem;
       color:#0f172a;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#64748b;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
     }
 
     /* SERVICES */
+
     .services{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -176,59 +265,220 @@
       background:white;
       padding:35px;
       border-radius:25px;
+      position:relative;
+      overflow:hidden;
+      transition:0.4s;
       box-shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
+    .card::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,#38bdf8,#7c3aed);
+      top:0;
+      left:0;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(59,130,246,0.2);
+    }
+
+    .icon{
+      width:70px;
+      height:70px;
+      border-radius:20px;
+      background:linear-gradient(135deg,#38bdf8,#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:30px;
+      margin-bottom:25px;
+    }
+
     .card h3{
+      margin-bottom:15px;
+      color:#2563eb;
+      font-size:1.4rem;
+    }
+
+    .card p{
+      color:#64748b;
+      line-height:1.9;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .about-content{
+      max-width:850px;
+      background:white;
+      padding:60px;
+      border-radius:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .about-content h2{
+      font-size:2.8rem;
+      margin-bottom:20px;
+      color:#0f172a;
+    }
+
+    .about-content p{
+      color:#475569;
+      line-height:2;
+      margin-bottom:20px;
+    }
+
+    .features{
+      margin-top:25px;
+    }
+
+    .features div{
+      margin-bottom:15px;
+      color:#0f172a;
+      font-weight:500;
+      font-size:1.05rem;
+    }
+
+    /* PACKAGES */
+
+    .packages{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .package-card{
+      background:white;
+      padding:40px 30px;
+      border-radius:25px;
+      text-align:center;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .package-card:hover{
+      transform:scale(1.04);
+    }
+
+    .package-card h3{
+      font-size:1.6rem;
+      margin-bottom:15px;
       color:#2563eb;
     }
 
-    /* CONTACT */
-    .contact-container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:40px;
-      background:#0f172a;
-      padding:60px;
-      border-radius:35px;
+    .package-card p{
+      color:#64748b;
+      line-height:1.9;
     }
 
-    .contact-left h2{
+    .tag{
+      position:absolute;
+      top:15px;
+      right:-40px;
+      background:#7c3aed;
       color:white;
-      font-size:3rem;
+      padding:8px 50px;
+      transform:rotate(45deg);
+      font-size:0.8rem;
     }
 
-    .contact-left p{
-      color:#cbd5e1;
-    }
+    /* CTA */
 
-    .info-box{
-      background:rgba(255,255,255,0.08);
-      padding:18px;
-      border-radius:12px;
-      color:white;
-      margin-top:15px;
-    }
-
-    .contact-right{
-      background:white;
-      padding:40px;
+    .cta{
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      padding:70px;
       border-radius:30px;
       text-align:center;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta::before{
+      content:'';
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(56,189,248,0.08);
+      border-radius:50%;
+      top:-100px;
+      right:-80px;
+    }
+
+    .cta h2{
+      font-size:3rem;
+      margin-bottom:20px;
+      position:relative;
+      z-index:1;
+    }
+
+    .cta p{
+      color:#dbeafe;
+      line-height:2;
+      max-width:850px;
+      margin:auto;
+      position:relative;
+      z-index:1;
+    }
+
+    .cta .btn{
+      margin-top:35px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:white;
+      padding:60px 30px;
+      border-radius:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:2.7rem;
+      margin-bottom:20px;
+      color:#0f172a;
+    }
+
+    .contact p{
+      margin:15px 0;
+      color:#475569;
+      font-size:1.05rem;
     }
 
     .whatsapp-btn{
       display:inline-block;
-      background:#22c55e;
+      margin-top:30px;
+      padding:16px 40px;
+      background:linear-gradient(90deg,#22c55e,#16a34a);
       color:white;
-      padding:15px 25px;
-      border-radius:30px;
       text-decoration:none;
-      margin-top:15px;
+      border-radius:50px;
       font-weight:600;
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(34,197,94,0.4);
+    }
+
+    .whatsapp-btn:hover{
+      transform:scale(1.05);
     }
 
     /* FLOATING BUTTON */
+
     .floating-whatsapp{
       position:fixed;
       right:25px;
@@ -240,73 +490,59 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      text-decoration:none;
       color:white;
       font-size:30px;
       z-index:999;
+      animation:pulse 2s infinite;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    @keyframes pulse{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.1);}
+      100%{transform:scale(1);}
     }
 
     /* FOOTER */
+
     footer{
       background:#020617;
       color:#cbd5e1;
       text-align:center;
       padding:25px;
+      margin-top:50px;
     }
 
-    /* =========================
-       ONLY RESPONSIVE FIX
-       (NO DESIGN CHANGE)
-    ========================= */
+    /* MOBILE */
 
     @media(max-width:768px){
 
+      .hero h1{
+        font-size:3rem;
+      }
+
+      .section-title h2,
+      .about-content h2,
+      .cta h2,
+      .contact h2{
+        font-size:2rem;
+      }
+
+      .cta{
+        padding:45px 25px;
+      }
+
       nav{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
+        padding:18px 20px;
       }
 
       nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        margin-top:10px;
+        display:none;
       }
 
-      .hero h1{
-        font-size:2.2rem;
-      }
-
-      .hero p{
-        font-size:1rem;
-      }
-
-      .hero-buttons{
-        flex-direction:column;
-      }
-
-      .btn{
-        width:100%;
-        text-align:center;
-      }
-
-      .section-title h2{
-        font-size:1.8rem;
-      }
-
-      .services{
-        grid-template-columns:1fr;
-      }
-
-      .contact-container{
-        padding:30px;
-      }
-
-      .contact-left h2{
-        font-size:1.8rem;
-      }
-
-      .contact-right{
-        padding:25px;
+      .about-content{
+        padding:35px 25px;
       }
 
     }
@@ -317,66 +553,328 @@
 
 <body>
 
+  <!-- NAVBAR -->
+
   <nav>
+
     <div class="logo">RITHU RENTAL AND SELF DRIVING CAR</div>
 
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </nav>
 
+  <!-- HERO -->
+
   <header>
+
     <div class="hero">
+
       <h1>Safe & Premium Travel Experience</h1>
-      <p>Travel across Tamil Nadu with comfort, safety and trust.</p>
+
+      <p>
+        Travel comfortably across Tamil Nadu with trusted
+        rental car service. Airport rides, family trips,
+        outstation travel, and temple tours with professional support.
+      </p>
 
       <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">Book Now</a>
-        <a href="#services" class="btn btn-secondary">Services</a>
+
+        <a href="#contact" class="btn btn-primary">
+          Book Now
+        </a>
+
+        <a href="#services" class="btn btn-secondary">
+          Our Services
+        </a>
+
       </div>
+
+      <div class="hero-stats">
+
+        <div class="stat-box">
+          <h2>500+</h2>
+          <p>Happy Customers</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>24/7</h2>
+          <p>Booking Support</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>100%</h2>
+          <p>Safe Journey</p>
+        </div>
+
+      </div>
+
     </div>
+
   </header>
 
+  <!-- SERVICES -->
+
   <section id="services">
+
     <div class="section-title">
+
       <h2>Our Services</h2>
+
+      <p>
+        Premium transportation services with comfort,
+        safety, and reliability.
+      </p>
+
     </div>
 
     <div class="services">
-      <div class="card"><h3>🚖 Local Travel</h3></div>
-      <div class="card"><h3>✈ Airport Pickup</h3></div>
-      <div class="card"><h3>🛕 Temple Tours</h3></div>
-      <div class="card"><h3>🏔 Outstation Trips</h3></div>
+
+      <div class="card">
+
+        <div class="icon">🚖</div>
+
+        <h3>Local Travel</h3>
+
+        <p>
+          Comfortable city rides for shopping,
+          office trips, and daily travel needs.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">✈</div>
+
+        <h3>Airport Pickup</h3>
+
+        <p>
+          On-time airport pickup and drop service
+          with smooth travel experience.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">🛕</div>
+
+        <h3>Temple Tours</h3>
+
+        <p>
+          Visit famous temples across Tamil Nadu
+          with peaceful and comfortable travel.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">🏔</div>
+
+        <h3>Tour Packages</h3>
+
+        <p>
+          Family vacation and hill station trips
+          with affordable pricing.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">👨‍👩‍👧</div>
+
+        <h3>Family Trips</h3>
+
+        <p>
+          Spacious and safe rides for family
+          functions and holiday journeys.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="icon">🌙</div>
+
+        <h3>24/7 Service</h3>
+
+        <p>
+          Easy booking and customer support
+          available anytime for your travel.
+        </p>
+
+      </div>
+
     </div>
+
   </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-content">
+
+        <h2>Why Choose RITHU RENTAL AND SELF DRIVING CAR?</h2>
+
+        <p>
+          We provide premium travel experience with comfort,
+          punctuality, and affordable pricing. Our focus is
+          customer satisfaction and safe journeys.
+        </p>
+
+        <p>
+          Whether you need airport transport, local travel,
+          or long-distance trips, we ensure smooth and
+          professional service every time.
+        </p>
+
+        <div class="features">
+
+          <div>✔ Clean & Comfortable Vehicle</div>
+          <div>✔ Professional Driver Support</div>
+          <div>✔ Affordable Pricing</div>
+          <div>✔ Reliable Long Distance Travel</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PACKAGES -->
+
+  <section id="packages">
+
+    <div class="section-title">
+
+      <h2>Travel Packages</h2>
+
+      <p>
+        Choose the perfect package for your journey.
+      </p>
+
+    </div>
+
+    <div class="packages">
+
+      <div class="package-card">
+
+        <div class="tag">Popular</div>
+
+        <h3>Airport Ride</h3>
+
+        <p>
+          Reliable airport pickup and drop transportation service.
+        </p>
+
+      </div>
+
+      <div class="package-card">
+
+        <h3>Outstation Travel</h3>
+
+        <p>
+          Comfortable long-distance travel across Tamil Nadu.
+        </p>
+
+      </div>
+
+      <div class="package-card">
+
+        <h3>Family Tour</h3>
+
+        <p>
+          Premium family travel package for tours and vacations.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section>
+
+    <div class="cta">
+
+      <h2>Book Your Journey Today</h2>
+
+      <p>
+        Enjoy safe, affordable, and premium travel experience
+        with RITHU RENTAL CAR.
+      </p>
+
+      <a href="#contact" class="btn btn-primary">
+        Contact Now
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
 
   <section id="contact">
-    <div class="contact-container">
 
-      <div class="contact-left">
-        <h2>Contact Us</h2>
-        <div class="info-box">📞 8870889125</div>
-        <div class="info-box">📍 Theni, Tamil Nadu</div>
-      </div>
+    <div class="contact">
 
-      <div class="contact-right">
-        <h3>Quick Booking</h3>
+      <h2>Contact Us</h2>
 
-        <a class="whatsapp-btn"
-        href="https://wa.me/918870889125">
-        WhatsApp Book
-        </a>
-      </div>
+      <p>Book your next ride with confidence and comfort.</p>
+
+      <br>
+
+      <p><strong>📞 Phone:</strong> 8870889125</p>
+
+      <p><strong>📧 Email:</strong> nithishkumar782@gmail.com</p>
+
+      <p><strong>📍 Location:</strong> Theni, Tamil Nadu</p>
+
+      <a
+        href="https://wa.me/918870889125?text=Hello%20RITHU%20RENTAL%20CAR,%20I%20want%20to%20book%20a%20ride."
+        target="_blank"
+        class="whatsapp-btn">
+
+        WhatsApp Booking
+
+      </a>
 
     </div>
+
   </section>
 
-  <a class="floating-whatsapp" href="https://wa.me/918870889125">☎</a>
+  <!-- FLOATING WHATSAPP -->
+
+  <a
+    href="https://wa.me/918870889125"
+    target="_blank"
+    class="floating-whatsapp">
+
+    ☎
+
+  </a>
+
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 RITHU RENTAL AND SELF DRIVING CAR
+
+    © 2026 RITHU RENTAL AND SELF DRIVING CAR | Premium Travel Experience
+
   </footer>
 
 </body>
