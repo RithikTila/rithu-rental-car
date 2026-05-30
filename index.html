@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>RITHU RENTAL AND SELF DRIVING CAR</title>
+  <title>RITHU RENTAL CAR</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -89,21 +89,21 @@
 
     /* HERO SECTION */
 
-   header{
-  min-height:100vh;
-  background:
-  linear-gradient(rgba(2,6,23,0.75), rgba(15,23,42,0.85)),
-  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:120px 20px 80px;
-  position:relative;
-}
+    header{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(2,6,23,0.85), rgba(15,23,42,0.92)),
+      linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb,#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:120px 20px 80px;
+      position:relative;
+      overflow:hidden;
+    }
+
     header::before{
       content:'';
       position:absolute;
@@ -349,33 +349,6 @@
       font-weight:500;
       font-size:1.05rem;
     }
-    <section id="gallery">
-
-  <div class="section-title">
-    <h2>Our Vehicles</h2>
-    <p>Clean, comfortable and well-maintained cars for every journey.</p>
-  </div>
-
-  <div class="gallery">
-
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80">
-      <h3>Sedan Cars</h3>
-    </div>
-
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
-      <h3>SUV Vehicles</h3>
-    </div>
-
-    <div class="gallery-card">
-      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80">
-      <h3>Premium Cars</h3>
-    </div>
-
-  </div>
-
-</section>
 
     /* PACKAGES */
 
@@ -467,43 +440,159 @@
 
     /* CONTACT */
 
-    .contact{
-      background:white;
-      padding:60px 30px;
-      border-radius:30px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
-      text-align:center;
-    }
+    
+      /* CONTACT SECTION */
 
-    .contact h2{
-      font-size:2.7rem;
-      margin-bottom:20px;
-      color:#0f172a;
-    }
+.contact-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+  align-items:center;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  border-radius:35px;
+  padding:60px;
+  overflow:hidden;
+  position:relative;
+}
 
-    .contact p{
-      margin:15px 0;
-      color:#475569;
-      font-size:1.05rem;
-    }
+.contact-container::before{
+  content:'';
+  position:absolute;
+  width:350px;
+  height:350px;
+  background:rgba(56,189,248,0.08);
+  border-radius:50%;
+  top:-120px;
+  right:-120px;
+}
 
-    .whatsapp-btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:16px 40px;
-      background:linear-gradient(90deg,#22c55e,#16a34a);
-      color:white;
-      text-decoration:none;
-      border-radius:50px;
-      font-weight:600;
-      transition:0.4s;
-      box-shadow:0 10px 25px rgba(34,197,94,0.4);
-    }
+.contact-left{
+  position:relative;
+  z-index:1;
+}
 
-    .whatsapp-btn:hover{
-      transform:scale(1.05);
-    }
+.contact-tag{
+  display:inline-block;
+  background:rgba(56,189,248,0.15);
+  color:#38bdf8;
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:0.9rem;
+  font-weight:600;
+  margin-bottom:20px;
+}
 
+.contact-left h2{
+  color:white;
+  font-size:3rem;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.contact-left p{
+  color:#cbd5e1;
+  line-height:2;
+  margin-bottom:30px;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.info-box{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:18px;
+  border-radius:18px;
+  transition:0.4s;
+}
+
+.info-box:hover{
+  transform:translateX(10px);
+  background:rgba(255,255,255,0.08);
+}
+
+.info-icon{
+  width:60px;
+  height:60px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#38bdf8,#7c3aed);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:24px;
+}
+
+.info-box h4{
+  color:white;
+  margin-bottom:5px;
+}
+
+.info-box p{
+  margin:0;
+  color:#cbd5e1;
+}
+
+.contact-right{
+  background:white;
+  padding:50px 40px;
+  border-radius:30px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.contact-right h3{
+  font-size:2rem;
+  color:#0f172a;
+  margin-bottom:15px;
+}
+
+.contact-right p{
+  color:#64748b;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.contact-right .whatsapp-btn{
+  display:inline-block;
+  width:100%;
+  padding:18px;
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:600;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(34,197,94,0.35);
+}
+
+.contact-right .whatsapp-btn:hover{
+  transform:scale(1.04);
+}
+
+@media(max-width:768px){
+
+  .contact-container{
+    padding:35px 25px;
+  }
+
+  .contact-left h2{
+    font-size:2.2rem;
+  }
+
+  .contact-right{
+    padding:35px 25px;
+  }
+
+}
     /* FLOATING BUTTON */
 
     .floating-whatsapp{
@@ -584,7 +673,7 @@
 
   <nav>
 
-    <div class="logo">RITHU RENTAL AND SELF DRIVING CAR</div>
+    <div class="logo">RITHU RENTAL CAR</div>
 
     <ul>
       <li><a href="#">Home</a></li>
@@ -747,15 +836,12 @@
   <!-- ABOUT -->
 
   <section id="about">
-    <img
-src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
-class="about-img">
 
     <div class="about">
 
       <div class="about-content">
 
-        <h2>Why Choose RITHU RENTAL AND SELF DRIVING CAR?</h2>
+        <h2>Why Choose RITHU RENTAL CAR?</h2>
 
         <p>
           We provide premium travel experience with comfort,
@@ -859,28 +945,74 @@ class="about-img">
 
   <!-- CONTACT -->
 
-  <section id="contact">
+<section id="contact">
 
-    <div class="contact">
+  <div class="contact-container">
 
-      <h2>Contact Us</h2>
+    <div class="contact-left">
 
-      <p>Book your next ride with confidence and comfort.</p>
+      <span class="contact-tag">CONTACT US</span>
 
-      <br>
+      <h2>Book Your Ride Instantly</h2>
 
-      <p><strong>📞 Phone:</strong> 8870889125</p>
+      <p>
+        Travel safely and comfortably with RITHU RENTAL CAR.
+        Available for airport pickup, outstation travel,
+        family trips, and local rides across Tamil Nadu.
+      </p>
 
-      <p><strong>📧 Email:</strong> nithishkumar782@gmail.com</p>
+      <div class="contact-info">
 
-      <p><strong>📍 Location:</strong> Theni, Tamil Nadu</p>
+        <div class="info-box">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Call Us</h4>
+            <p>8870889125</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>nithishkumar782@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>Theni, Tamil Nadu</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="contact-right">
+
+      <h3>Quick Booking</h3>
+
+      <p>
+        Click below to book your ride directly through WhatsApp.
+      </p>
 
       <a
         href="https://wa.me/918870889125?text=Hello%20RITHU%20RENTAL%20CAR,%20I%20want%20to%20book%20a%20ride."
         target="_blank"
         class="whatsapp-btn">
 
-        WhatsApp Booking
+        Book on WhatsApp
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
       </a>
 
@@ -903,7 +1035,7 @@ class="about-img">
 
   <footer>
 
-    © 2026 RITHU RENTAL AND SELF DRIVING CAR | Premium Travel Experience
+    © 2026 RITHU RENTAL CAR | Premium Travel Experience
 
   </footer>
 
